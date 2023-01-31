@@ -3,7 +3,7 @@
   inputs:
     ConnectionType: 'AzureRM'
     appType: 'webApp'
-    WebAppName: 
+    WebAppName: '澎湖一日遊'
     packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
 # Archive your static HTML project and save it with the build record.
 # Add steps that build, run tests, deploy, and more:
