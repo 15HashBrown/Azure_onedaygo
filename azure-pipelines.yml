@@ -74,4 +74,4 @@ stages:
               appType: 'webAppLinux'
               azureSubscription: 'Azure for Students (6c9a9fa8-0f9d-4c7d-8e78-45aa1f91682a)'
               appName: 'test20230224web'
-              package: '$((System.DefaultWorkingDirectory)/**/*.zip'
+              package: '$(System.DefaultWorkingDirectory)/**/*.zip'
