@@ -71,7 +71,6 @@ stages:
           - task: AzureWebApp@1
             displayName: 'Deploy Azure Web App : test20230224web'
             inputs:
-              azureSubscription: 'Azure for Students (6c9a9fa8-0f9d-4c7d-8e78-45aa1f91682a)'
               appType: 'webAppLinux'
               appName: 'test20230224web'
-              package: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+              package: '$((System.DefaultWorkingDirectory)/**/*.zip'
