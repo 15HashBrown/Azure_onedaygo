@@ -81,3 +81,4 @@ stages:
               appType: 'webAppLinux'
               WebAppName: 'test20230224web'
               packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+              RuntimeStack: 'PHP|8.0'
