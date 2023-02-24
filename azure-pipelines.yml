@@ -1,10 +1,4 @@
 # PHP as Linux Web App on Azure
-- task: AzureWebApp@1
-  inputs:
-    azureSubscription: 'Azure for Students (6c9a9fa8-0f9d-4c7d-8e78-45aa1f91682a)'
-    appType: 'webAppLinux'
-    appName: 'test20230224web'
-    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
 # Build, package and deploy your PHP project to Azure Linux Web App.
 # Add steps that run tests and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/php
@@ -84,3 +78,9 @@ stages:
               azureSubscription: $(azureSubscription)
               appName: $(webAppName)
               package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'Azure for Students (6c9a9fa8-0f9d-4c7d-8e78-45aa1f91682a)'
+    appType: 'webAppLinux'
+    appName: 'test20230224web'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
