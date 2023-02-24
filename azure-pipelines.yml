@@ -75,8 +75,14 @@ stages:
               downloadPath: '$(System.ArtifactsDirectory)'
           - task: DownloadPipelineArtifact@2
             inputs:
-                buildType: 'specific'
-                project: '0534617d-20dd-400f-8b05-d4ab0d0f8442'
-                definition: '35'
-                buildVersionToDownload: 'latest'
-                targetPath: '$(Pipeline.Workspace)'
+              buildType: 'specific'
+              project: '0534617d-20dd-400f-8b05-d4ab0d0f8442'
+              definition: '35'
+              buildVersionToDownload: 'latest'
+              targetPath: '$(Pipeline.Workspace)'
+          - task: AzureWebApp@1
+            inputs:
+              azureSubscription: 'Azure for Students (6c9a9fa8-0f9d-4c7d-8e78-45aa1f91682a)'
+              appType: 'webAppLinux'
+              appName: 'test20230224web'
+              package: '$(System.DefaultWorkingDirectory)/**/*.zip'
