@@ -72,7 +72,7 @@ stages:
             inputs:
               buildType: 'current'
               downloadType: 'specific'
-              downloadPath: '$(System.ArtifactsDirectory)'
+                downloadPath: '$(System.ArtifactsDirectory)'
 
           - task: AzureRmWebAppDeployment@4
             inputs:
