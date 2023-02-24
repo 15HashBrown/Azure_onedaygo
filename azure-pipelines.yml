@@ -68,17 +68,10 @@ stages:
       runOnce:
         deploy:
           steps:
-          - task: DownloadGitHubRelease@0
+          - task: AzureWebApp@1
             inputs:
-              connection: 'GitHub connection 9'
-              userRepository: '15HashBrown/Azure_onedaygo'
-              defaultVersionType: 'latest'
-              downloadPath: '$(System.ArtifactsDirectory)'
-          - task: AzureRmWebAppDeployment@4
-            inputs:
-              ConnectionType: 'AzureRM'
               azureSubscription: 'Azure for Students (6c9a9fa8-0f9d-4c7d-8e78-45aa1f91682a)'
               appType: 'webAppLinux'
-              WebAppName: 'test20230224web'
-              packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
-              RuntimeStack: 'PHP|8.0'
+              appName: 'test20230224web'
+              package: '$(rootFolder)/**/*.zip'
+              runtimeStack: 'PHP|8.0'
